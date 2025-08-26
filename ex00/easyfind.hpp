@@ -6,7 +6,7 @@
 /*   By: tiizuka <tiizuka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 11:59:29 by tiizuka           #+#    #+#             */
-/*   Updated: 2025/08/26 12:45:20 by tiizuka          ###   ########.fr       */
+/*   Updated: 2025/08/26 20:31:51 by tiizuka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <vector>
+#include <deque>
 #include <algorithm>
-#include <list>
 #include "Log.hpp"
 
 template<typename T>
-int easyfind(const T&, const int);
+int easyfind(const std::vector<T>&, const int);
+
+template<typename T>
+int easyfind(const std::deque<T>&, const int);
 
 #include "easyfind.tpp"
 

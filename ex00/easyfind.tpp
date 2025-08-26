@@ -6,19 +6,30 @@
 /*   By: tiizuka <tiizuka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 11:59:38 by tiizuka           #+#    #+#             */
-/*   Updated: 2025/08/26 12:54:37 by tiizuka          ###   ########.fr       */
+/*   Updated: 2025/08/26 21:02:55 by tiizuka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
 
 template<typename T>
-int easyfind(const T& content, const int key) {
-	const std::list<int>T::iterator it = std::find(content.begin(), content.end(), key);
-	if (it != content.end()) {
-			std::cout << "Value " << key << " found at index: " << std::distance(const content.begin(), it) << std::endl;
-	} else {
-			std::cout << "Value " << key << " not found." << std::endl;
+int easyfind(const std::vector<T>& v, const int key) {
+	for (size_t i = 0; i < v.size(); ++i) {
+		if (v[i] == key) {
+			return i;
+		}
 	}
-	return 0;
+	throw std::invalid_argument("key: " + Log::itoa(key) + " not found.");
+	return -1;
+}
+
+template<typename T>
+int easyfind(const std::deque<T>& v, const int key) {
+	for (size_t i = 0; i < v.size(); ++i) {
+		if (v[i] == key) {
+			return i;
+		}
+	}
+	throw std::invalid_argument("key: " + Log::itoa(key) + " not found.");
+	return -1;
 }
