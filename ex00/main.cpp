@@ -20,6 +20,7 @@ int main(void)
 	{
 		std::cerr << C_R << e.what() << C_CLR << '\n';
 	}
+
 	std::deque<int> d;
 	d.push_back(-2);
 	d.push_back(-1);
@@ -31,6 +32,23 @@ int main(void)
 		Log::a(F, L, C_G, "easyfind(d,  0)", "=", Log::itoa(easyfind(d,  0)));
 		Log::a(F, L, C_G, "easyfind(d,  1)", "=", Log::itoa(easyfind(d,  1)));
 		Log::a(F, L, C_G, "easyfind(d,  2)", "=", Log::itoa(easyfind(d,  2)));
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << C_R << e.what() << C_CLR << '\n';
+	}
+
+	std::list<int> l;
+	l.push_back(2);
+	l.push_back(3);
+	l.push_back(4);
+	l.push_back(5);
+	try {
+		Log::a(F, L, C_G, "easyfind(d, 2)", "=", Log::itoa(easyfind(l, 2)));
+		Log::a(F, L, C_G, "easyfind(d, 3)", "=", Log::itoa(easyfind(l, 3)));
+		Log::a(F, L, C_G, "easyfind(d, 4)", "=", Log::itoa(easyfind(l, 4)));
+		Log::a(F, L, C_G, "easyfind(d, 5)", "=", Log::itoa(easyfind(l, 5)));
+		Log::a(F, L, C_G, "easyfind(d, 6)", "=", Log::itoa(easyfind(l, 6)));
 	}
 	catch(const std::exception& e)
 	{
