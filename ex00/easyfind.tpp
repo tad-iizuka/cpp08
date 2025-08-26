@@ -6,16 +6,16 @@
 /*   By: tiizuka <tiizuka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 11:59:38 by tiizuka           #+#    #+#             */
-/*   Updated: 2025/08/27 03:40:29 by tiizuka          ###   ########.fr       */
+/*   Updated: 2025/08/27 03:47:44 by tiizuka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
 
 template<typename T>
-int easyfind(T& container, int key) {
+typename T::iterator easyfind(T& container, int key) {
 	typename T::iterator it = std::find(container.begin(), container.end(), key);
 	if (it == container.end())
 		throw std::invalid_argument(F + (":" + Log::itoa(L)) + " key = " + Log::itoa(key) + " not found.");
-	return static_cast<int>(std::distance(container.begin(), it));
+	return it;
 }
