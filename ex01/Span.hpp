@@ -6,7 +6,7 @@
 /*   By: tiizuka <tiizuka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 15:13:36 by tiizuka           #+#    #+#             */
-/*   Updated: 2025/08/30 20:05:43 by tiizuka          ###   ########.fr       */
+/*   Updated: 2025/08/30 20:24:05 by tiizuka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,21 @@
 
 class Span
 {
-  public:
+	public:
 
-    void          addNumber(const unsigned int n);
-    void          addNumber(const std::vector<unsigned int>::iterator begin, const std::vector<unsigned int>::iterator end);
-    size_t        shortestSpan(void);
-    size_t        longestSpan(void);
-    unsigned int  size(void) const;
-    unsigned int  capacity(void) const;
-    Span(unsigned int n);
-    ~Span(void);
+		void					addNumber(const unsigned int n);
+		void					addNumber(const std::vector<unsigned int>::iterator begin, const std::vector<unsigned int>::iterator end);
+		unsigned int	shortestSpan(void);
+		unsigned int	longestSpan(void);
+		unsigned int	size(void) const;
+		unsigned int	capacity(void) const;
+		Span(unsigned int n);
+		~Span(void);
 
-  private:
+	private:
 
-    std::vector<unsigned int> _v;  
-    Span(void);
+		std::vector<unsigned int> _v;  
+		Span(void);
 };
 
 #endif
