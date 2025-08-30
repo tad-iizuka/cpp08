@@ -38,7 +38,7 @@ int main(void)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << C_R << e.what() << C_CLR << '\n';
+		Log::a(F, L, C_R, "Error:", e.what());
 	}
 	return (EXIT_SUCCESS);
 }
