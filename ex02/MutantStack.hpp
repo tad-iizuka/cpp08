@@ -6,7 +6,7 @@
 /*   By: tiizuka <tiizuka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:52:56 by tiizuka           #+#    #+#             */
-/*   Updated: 2025/08/30 13:08:19 by tiizuka          ###   ########.fr       */
+/*   Updated: 2025/08/30 13:45:57 by tiizuka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ class MutantStack : public std::stack<T, Container>
 
 	public:
 
-		MutantStack() {}
+		MutantStack(void) : std::stack<T, Container>() {};
 		MutantStack(const MutantStack& other) : std::stack<T, Container>(other) {}
 		MutantStack& operator=(const MutantStack& other) {
 				std::stack<T, Container>::operator=(other);
 				return *this;
 		}
-		~MutantStack() {}
+		~MutantStack(void) {}
 
 		typedef typename Container::iterator iterator;
 		typedef typename Container::const_iterator const_iterator;
@@ -52,5 +52,7 @@ class MutantStack : public std::stack<T, Container>
 		const_reverse_iterator rend() const { return this->c.rend(); }
 
 };
+
+#include "MutantStack.tpp"
 
 #endif
