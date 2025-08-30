@@ -6,7 +6,7 @@
 /*   By: tiizuka <tiizuka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:48:18 by tiizuka           #+#    #+#             */
-/*   Updated: 2025/08/30 20:15:33 by tiizuka          ###   ########.fr       */
+/*   Updated: 2025/08/30 20:20:12 by tiizuka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int main(void)
 	{
 		Span sp = Span(20000);
 		std::vector<unsigned int> v;
-		srand( (unsigned)time(NULL));
+		srand((unsigned int)time(NULL));
 		for (int i = 0; i < 20000; ++i)
 		{
 			int r = rand() % 20000;
