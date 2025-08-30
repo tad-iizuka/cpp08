@@ -6,7 +6,7 @@
 /*   By: tiizuka <tiizuka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:57:03 by tiizuka           #+#    #+#             */
-/*   Updated: 2025/08/30 19:34:23 by tiizuka          ###   ########.fr       */
+/*   Updated: 2025/08/30 19:40:21 by tiizuka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int main(void)
 {
 	MutantStack<int> mstack;
-
 	mstack.push(2);
 	mstack.push(4);
 	Log::a(F, L, C_G, "size:", Log::itoa(mstack.size()), "top:", Log::itoa(mstack.top()));
