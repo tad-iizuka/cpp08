@@ -6,7 +6,7 @@
 /*   By: tiizuka <tiizuka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:57:03 by tiizuka           #+#    #+#             */
-/*   Updated: 2025/08/30 13:10:11 by tiizuka          ###   ########.fr       */
+/*   Updated: 2025/08/30 19:34:23 by tiizuka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,18 @@ int main(void)
 {
 	MutantStack<int> mstack;
 
-	mstack.push(5);
-	mstack.push(17);
-
-	std::cout << "Top: " << mstack.top() << std::endl;  // 17
-
+	mstack.push(2);
+	mstack.push(4);
+	Log::a(F, L, C_G, "size:", Log::itoa(mstack.size()), "top:", Log::itoa(mstack.top()));
 	mstack.pop();
-	std::cout << "Size: " << mstack.size() << std::endl; // 1
-
-	mstack.push(3);
-	mstack.push(5);
-	mstack.push(737);
-	mstack.push(0);
-
-	std::cout << "Iterating:" << std::endl;
+	Log::a(F, L, C_G, "size:", Log::itoa(mstack.size()), "top:", Log::itoa(mstack.top()));
+	mstack.push(4);
+	mstack.push(6);
+	mstack.push(8);
+	mstack.push(10);
+	Log::a(F, L, C_G, "size:", Log::itoa(mstack.size()), "top:", Log::itoa(mstack.top()));
 	for (MutantStack<int>::iterator it = mstack.begin(); it != mstack.end(); ++it) {
-			std::cout << *it << std::endl;
+			Log::a(F, L, C_G, "index:", Log::itoa(std::distance(mstack.begin(), it)), "value:", Log::itoa(*it));
 	}
 	return (EXIT_SUCCESS);
 }
