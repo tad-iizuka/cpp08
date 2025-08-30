@@ -6,7 +6,7 @@
 /*   By: tiizuka <tiizuka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 15:15:37 by tiizuka           #+#    #+#             */
-/*   Updated: 2025/08/28 21:53:00 by tiizuka          ###   ########.fr       */
+/*   Updated: 2025/08/30 12:38:20 by tiizuka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,24 @@ void  Span::addNumber(const unsigned int value) {
       throw std::overflow_error("capacity exceeded");
   }
   _v.push_back(value);
+}
+
+size_t  Span::shortestSpan(void) {
+  unsigned int span = -1;
+  for (std::vector<unsigned int>::iterator it = _v.begin(); it != _v.end() - 1; ++it) {
+      if (span >= std::abs(static_cast<long>(*it) - static_cast<long>(*(it + 1))))
+        span = std::abs(static_cast<long>(*it) - static_cast<long>(*(it + 1)));
+  }
+  return span;
+}
+
+size_t  Span::longestSpan(void) {
+  unsigned int span = 0;
+  for (std::vector<unsigned int>::iterator it = _v.begin(); it != _v.end() - 1; ++it) {
+      if (span < std::abs(static_cast<long>(*it) - static_cast<long>(*(it + 1))))
+        span = std::abs(static_cast<long>(*it) - static_cast<long>(*(it + 1)));
+  }
+  return span;
 }
 
 void Span::insert(const std::vector<unsigned int>::iterator first, const std::vector<unsigned int>::iterator last) {
