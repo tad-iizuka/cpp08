@@ -6,7 +6,7 @@
 /*   By: tiizuka <tiizuka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:52:56 by tiizuka           #+#    #+#             */
-/*   Updated: 2025/08/30 15:36:50 by tiizuka          ###   ########.fr       */
+/*   Updated: 2025/08/30 20:30:20 by tiizuka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,20 @@ class MutantStack : public std::stack<T, Container>
 		MutantStack& operator=(const MutantStack& other);
 		~MutantStack(void);
 
-		typedef typename Container::iterator iterator;
-		typedef typename Container::const_iterator const_iterator;
-		typedef typename Container::reverse_iterator reverse_iterator;
-		typedef typename Container::const_reverse_iterator const_reverse_iterator;
+		typedef typename Container::iterator iter;
+		typedef typename Container::const_iterator const_iter;
+		typedef typename Container::reverse_iterator reverse_iter;
+		typedef typename Container::const_reverse_iterator const_reverse_iter;
 
-		iterator begin(void);
-		iterator end(void);
-		const_iterator begin(void) const;
-		const_iterator end(void) const;
+		iter begin(void);
+		iter end(void);
+		const_iter begin(void) const;
+		const_iter end(void) const;
 
-		reverse_iterator rbegin(void);
-		reverse_iterator rend(void);
-		const_reverse_iterator rbegin(void) const;
-		const_reverse_iterator rend(void) const;
+		reverse_iter rbegin(void);
+		reverse_iter rend(void);
+		const_reverse_iter rbegin(void) const;
+		const_reverse_iter rend(void) const;
 
 };
 
