@@ -6,7 +6,7 @@
 /*   By: tiizuka <tiizuka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:48:18 by tiizuka           #+#    #+#             */
-/*   Updated: 2025/08/30 19:55:01 by tiizuka          ###   ########.fr       */
+/*   Updated: 2025/08/30 19:56:27 by tiizuka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int main(void)
 				Log::a(F, L, C_R, "Error:", e.what());
 			}
 		}
-		sp.shortestSpan();
 	}
 	{
 		Span sp = Span(5);
