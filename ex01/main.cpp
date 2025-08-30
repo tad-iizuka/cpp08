@@ -6,7 +6,7 @@
 /*   By: tiizuka <tiizuka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:48:18 by tiizuka           #+#    #+#             */
-/*   Updated: 2025/08/30 12:48:20 by tiizuka          ###   ########.fr       */
+/*   Updated: 2025/08/30 19:55:01 by tiizuka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ int main(void)
 		sp.addNumber(17);
 		sp.addNumber(9);
 		sp.addNumber(11);
-		std::cout << sp.shortestSpan() << std::endl;
-		std::cout << sp.longestSpan() << std::endl;
+		Log::a(F, L, C_G, "shortest:", Log::itoa(sp.shortestSpan()));
+		Log::a(F, L, C_G, "longest:", Log::itoa(sp.longestSpan()));
 	}
 	return (EXIT_SUCCESS);
 }
