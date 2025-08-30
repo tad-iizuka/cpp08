@@ -19,22 +19,22 @@ int main(void)
 	l.push_back(3);
 	l.push_back(4);
 
-  std::set<int> s;
+	std::set<int> s;
 	s.insert(100);
 	s.insert(200);
 	s.insert(300);
 
 	try {
-        std::vector<int>::iterator itv = easyfind(v, 20);
-        std::cout << "vector: " << *itv << std::endl;
-        std::deque<int>::iterator itd = easyfind(d, 0);
-        std::cout << "deque:  " << *itd << std::endl;
+				std::vector<int>::iterator itv = easyfind(v, 20);
+				std::cout << "vector: " << *itv << std::endl;
+				std::deque<int>::iterator itd = easyfind(d, 0);
+				std::cout << "deque:  " << *itd << std::endl;
 				std::list<int>::iterator itl = easyfind(l, 3);
-        std::cout << "list:   " << *itl << std::endl;
-        std::set<int>::iterator its = easyfind(s, 200);
-        std::cout << "set:    " << *its << std::endl;
-        itv = easyfind(v, 6);
-        std::cout << "vector: " << *itv << std::endl;
+				std::cout << "list:   " << *itl << std::endl;
+				std::set<int>::iterator its = easyfind(s, 200);
+				std::cout << "set:    " << *its << std::endl;
+				itv = easyfind(v, 6);
+				std::cout << "vector: " << *itv << std::endl;
 	}
 	catch(const std::exception& e)
 	{
