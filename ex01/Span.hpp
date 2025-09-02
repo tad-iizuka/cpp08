@@ -6,7 +6,7 @@
 /*   By: tiizuka <tiizuka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 15:13:36 by tiizuka           #+#    #+#             */
-/*   Updated: 2025/08/30 20:26:39 by tiizuka          ###   ########.fr       */
+/*   Updated: 2025/09/02 20:50:18 by tiizuka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ class Span
 
 		std::vector<unsigned int> _v;  
 		Span(void);
+		Span(const Span& src);
+		Span& operator=(const Span& rhs);
 };
 
 #endif
