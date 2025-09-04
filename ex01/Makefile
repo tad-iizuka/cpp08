@@ -6,7 +6,7 @@
 #    By: tiizuka <tiizuka@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/27 15:11:59 by tiizuka           #+#    #+#              #
-#    Updated: 2025/08/27 15:12:13 by tiizuka          ###   ########.fr        #
+#    Updated: 2025/09/04 14:17:54 by tiizuka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJS		=	$(SRCS:.cpp=.o)
 
 # Compiler setting
 CXX			=	c++
-CXXFLAGSS	=	-Wall -Wextra -Werror -pedantic -g -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -pedantic -g -std=c++98
 
 # Remove command
 RM			= rm
@@ -28,10 +28,10 @@ RM			= rm
 all:		${NAME}
 
 $(NAME) :	$(OBJS)
-			$(CXX) $(CXXFLAGSS) -o $(NAME) $(OBJS)
+			$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 %.o: %.cpp
-			$(CXX) $(CXXFLAGSS) -c $< -o $@
+			$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Rule for cleaning object files
 clean:
