@@ -6,7 +6,7 @@
 /*   By: tiizuka <tiizuka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 15:15:37 by tiizuka           #+#    #+#             */
-/*   Updated: 2025/08/30 20:26:57 by tiizuka          ###   ########.fr       */
+/*   Updated: 2025/09/05 14:41:44 by tiizuka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,15 @@ unsigned int	Span::longestSpan(void) {
 				span = std::abs(static_cast<long>(*it) - static_cast<long>(*(it + 1)));
 	}
 	return span;
+}
+
+Span::Span(const Span& src) {
+	std::copy(src._v.begin(), src._v.end(), _v.begin());
+}
+
+Span& Span::operator=(const Span& rhs) {
+	std::copy(rhs._v.begin(), rhs._v.end(), _v.begin());
+	return *this;
 }
 
 unsigned int	Span::size(void) const {

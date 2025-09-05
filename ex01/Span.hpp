@@ -6,7 +6,7 @@
 /*   By: tiizuka <tiizuka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 15:13:36 by tiizuka           #+#    #+#             */
-/*   Updated: 2025/09/02 20:50:18 by tiizuka          ###   ########.fr       */
+/*   Updated: 2025/09/05 14:33:09 by tiizuka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,15 @@ class Span
 		unsigned int	size(void) const;
 		unsigned int	capacity(void) const;
 		Span(unsigned int n);
+		Span(const Span& src);
+		Span& operator=(const Span& rhs);
 		~Span(void);
 
 	private:
 
 		std::vector<unsigned int> _v;  
 		Span(void);
-		Span(const Span& src);
-		Span& operator=(const Span& rhs);
+
 };
 
 #endif
