@@ -6,7 +6,7 @@
 /*   By: tiizuka <tiizuka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 15:15:37 by tiizuka           #+#    #+#             */
-/*   Updated: 2025/09/05 14:41:44 by tiizuka          ###   ########.fr       */
+/*   Updated: 2025/09/05 14:46:09 by tiizuka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,10 @@ Span::Span(const Span& src) {
 }
 
 Span& Span::operator=(const Span& rhs) {
-	std::copy(rhs._v.begin(), rhs._v.end(), _v.begin());
+	if (this != &rhs)
+	{
+		std::copy(rhs._v.begin(), rhs._v.end(), _v.begin());
+	}
 	return *this;
 }
 
