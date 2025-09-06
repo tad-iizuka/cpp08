@@ -6,7 +6,7 @@
 /*   By: tiizuka <tiizuka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 15:15:37 by tiizuka           #+#    #+#             */
-/*   Updated: 2025/09/05 14:46:09 by tiizuka          ###   ########.fr       */
+/*   Updated: 2025/09/06 15:05:56 by tiizuka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	Span::addNumber(const std::vector<unsigned int>::iterator begin,
 
 unsigned int	Span::shortestSpan(void) {
 	unsigned int span = -1;
+	if (_v.size() < 2)
+		throw std::out_of_range("shortestSpan size < 2");
 	for (std::vector<unsigned int>::iterator it = _v.begin(); it != _v.end() - 1; ++it) {
 			if (span >= std::abs(static_cast<long>(*it) - static_cast<long>(*(it + 1))))
 				span = std::abs(static_cast<long>(*it) - static_cast<long>(*(it + 1)));
@@ -39,6 +41,8 @@ unsigned int	Span::shortestSpan(void) {
 
 unsigned int	Span::longestSpan(void) {
 	unsigned int span = 0;
+	if (_v.size() < 2)
+		throw std::out_of_range("longestSpan size < 2");
 	for (std::vector<unsigned int>::iterator it = _v.begin(); it != _v.end() - 1; ++it) {
 			if (span < std::abs(static_cast<long>(*it) - static_cast<long>(*(it + 1))))
 				span = std::abs(static_cast<long>(*it) - static_cast<long>(*(it + 1)));

@@ -6,11 +6,14 @@
 /*   By: tiizuka <tiizuka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:48:18 by tiizuka           #+#    #+#             */
-/*   Updated: 2025/08/30 20:20:12 by tiizuka          ###   ########.fr       */
+/*   Updated: 2025/09/06 15:13:38 by tiizuka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+
+void shortestSpanCheck(int n);
+void longestSpanCheck(int n);
 
 int main(void)
 {
@@ -27,12 +30,14 @@ int main(void)
 	{
 		Span sp = Span(5);
 		Log::a(F, L, C_G, "Size:", Log::itoa(sp.size()), "Capacity:", Log::itoa(sp.capacity()));
-		for (int i = 0; i < 6; ++i) {
-			try {
+		for (int i = 0; i < 6; ++i)
+		{
+			try
+			{
 				sp.addNumber(i + 1);
 				Log::a(F, L, C_G, "Size:", Log::itoa(sp.size()), "Capacity:", Log::itoa(sp.capacity()));
 			}
-			catch (const std::exception& e)
+			catch (const std::exception &e)
 			{
 				Log::a(F, L, C_R, "Error:", e.what());
 			}
@@ -44,12 +49,13 @@ int main(void)
 		array.push_back(1);
 		array.push_back(2);
 		array.push_back(3);
-		try {
+		try
+		{
 			sp.addNumber(array.begin(), array.end());
 			Log::a(F, L, C_G, "Size:", Log::itoa(sp.size()), "Capacity:", Log::itoa(sp.capacity()));
 			sp.addNumber(array.begin(), array.end());
 		}
-		catch (const std::exception& e)
+		catch (const std::exception &e)
 		{
 			Log::a(F, L, C_R, "Error:", e.what());
 		}
@@ -63,16 +69,48 @@ int main(void)
 			int r = rand() % 20000;
 			v.push_back(r);
 		}
-		try {
+		try
+		{
 			sp.addNumber(v.begin(), v.end());
 			Log::a(F, L, C_G, "Size:", Log::itoa(sp.size()), "Capacity:", Log::itoa(sp.capacity()));
 			Log::a(F, L, C_G, "shortest:", Log::itoa(sp.shortestSpan()));
 			Log::a(F, L, C_G, "longest:", Log::itoa(sp.longestSpan()));
 		}
-		catch (const std::exception& e)
+		catch (const std::exception &e)
 		{
 			Log::a(F, L, C_R, "Error:", e.what());
 		}
 	}
+	for (int i = 0; i < 2; ++i)
+	{
+		shortestSpanCheck(i);
+		longestSpanCheck(i);
+	}
 	return (EXIT_SUCCESS);
+}
+
+void shortestSpanCheck(int n)
+{
+	Span sp = Span(n);
+	try
+	{
+		Log::a(F, L, C_G, "shortest:", Log::itoa(sp.shortestSpan()));
+	}
+	catch (const std::exception &e)
+	{
+		Log::a(F, L, C_R, "Error:", e.what());
+	}
+}
+
+void longestSpanCheck(int n)
+{
+	Span sp = Span(n);
+	try
+	{
+		Log::a(F, L, C_G, "longest:", Log::itoa(sp.longestSpan()));
+	}
+	catch (const std::exception &e)
+	{
+		Log::a(F, L, C_R, "Error:", e.what());
+	}
 }
